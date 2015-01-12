@@ -1,0 +1,13 @@
+{
+    "name": "shimoju/wordpress-heroku",
+    "description": "WordPress on Heroku",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Hiroshi Shimoju",
+            "email": "hiroshi.shimoju@gmail.com"
+        }
+    ],
+    "require": {
+    }
+}
