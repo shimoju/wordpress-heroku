@@ -8,6 +8,28 @@
             "email": "hiroshi.shimoju@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress/wordpress-ja",
+                "type": "webroot",
+                "version": "4.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://ja.wordpress.org/wordpress-4.1-ja.zip"
+                },
+                "require": {
+                    "fancyguy/webroot-installer": "~1.1"
+                }
+            }
+        }
+    ],
     "require": {
+        "wordpress/wordpress-ja": "*"
+    },
+    "extra": {
+        "webroot-dir": "public",
+        "webroot-package": "wordpress/wordpress-ja"
     }
 }
