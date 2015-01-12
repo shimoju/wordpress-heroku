@@ -14,18 +14,34 @@
  * @package WordPress
  */
 
+$wp_config = [
+	'db_name' => getenv('DB_NAME'),
+	'db_user' => getenv('DB_USER'),
+	'db_password' => getenv('DB_PASSWORD'),
+	'db_host' => getenv('DB_HOST'),
+
+	'auth_key' => getenv('AUTH_KEY'),
+	'secure_auth_key' => getenv('SECURE_AUTH_KEY'),
+	'logged_in_key' => getenv('LOGGED_IN_KEY'),
+	'nonce_key' => getenv('NONCE_KEY'),
+	'auth_salt' => getenv('AUTH_SALT'),
+	'secure_auth_salt' => getenv('SECURE_AUTH_SALT'),
+	'logged_in_salt' => getenv('LOGGED_IN_SALT'),
+	'nonce_salt' => getenv('NONCE_SALT'),
+];
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+define('DB_NAME', $wp_config['db_name']);
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', $wp_config['db_user']);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', $wp_config['db_password']);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $wp_config['db_host']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -42,14 +58,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         $wp_config['auth_key']);
+define('SECURE_AUTH_KEY',  $wp_config['secure_auth_key']);
+define('LOGGED_IN_KEY',    $wp_config['logged_in_key']);
+define('NONCE_KEY',        $wp_config['nonce_key']);
+define('AUTH_SALT',        $wp_config['auth_salt']);
+define('SECURE_AUTH_SALT', $wp_config['secure_auth_salt']);
+define('LOGGED_IN_SALT',   $wp_config['logged_in_salt']);
+define('NONCE_SALT',       $wp_config['nonce_salt']);
 
 /**#@-*/
 
