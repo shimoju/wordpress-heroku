@@ -111,6 +111,14 @@ define('FORCE_SSL_ADMIN', $wp_config['force_ssl_admin']);
 /** Disable WordPress auto updates */
 define('AUTOMATIC_UPDATER_DISABLED', $wp_config['automatic_updater_disabled']);
 
+/**
+ * Check 'HTTP_X_FORWARDED_PROTO' header
+ * because is_ssl() won't work when WordPress is behind a reverse proxy.
+ * http://codex.wordpress.org/Administration_Over_SSL
+ */
+if ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' )
+	$_SERVER['HTTPS'] = 'on';
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
