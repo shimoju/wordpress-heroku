@@ -15,3 +15,8 @@ $wp_config['auth_salt'] =        'put your unique phrase here';
 $wp_config['secure_auth_salt'] = 'put your unique phrase here';
 $wp_config['logged_in_salt'] =   'put your unique phrase here';
 $wp_config['nonce_salt'] =       'put your unique phrase here';
+
+$wp_config['wp_debug'] = true;
+$wp_config['disallow_file_mods'] = false;
+$wp_config['force_ssl_admin'] = false;
+$wp_config['automatic_updater_disabled'] = true;

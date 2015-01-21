@@ -29,11 +29,22 @@ $wp_config = [
 	'logged_in_salt' => getenv('LOGGED_IN_SALT'),
 	'nonce_salt' => getenv('NONCE_SALT'),
 
+	'wp_debug' => false,
+	'disallow_file_mods' => true,
+	'force_ssl_admin' => true,
+	'automatic_updater_disabled' => true,
+
+	'wp_env' => getenv('WP_ENV') ?: 'production',
+	'wp_config_env' => __DIR__ . '/wp-config-env.php',
 	'wp_config_local' => __DIR__ . '/wp-config-local.php',
 ];
 
-if ( file_exists($wp_config['wp_config_local']) )
+/* Settings for each environment */
+if ( file_exists($wp_config['wp_config_local']) ) {
 	require($wp_config['wp_config_local']);
+} else {
+	require($wp_config['wp_config_env']);
+}
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -89,7 +100,16 @@ $table_prefix  = 'wp_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', $wp_config['wp_debug']);
+
+/** Disable plugin and theme update and installation */
+define('DISALLOW_FILE_MODS', $wp_config['disallow_file_mods']);
+
+/** Require SSL for admin and logins */
+define('FORCE_SSL_ADMIN', $wp_config['force_ssl_admin']);
+
+/** Disable WordPress auto updates */
+define('AUTOMATIC_UPDATER_DISABLED', $wp_config['automatic_updater_disabled']);
 
 /* That's all, stop editing! Happy blogging. */
 
