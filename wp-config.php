@@ -30,6 +30,7 @@ $wp_config = [
 	'nonce_salt' => getenv('NONCE_SALT'),
 
 	'wp_debug' => false,
+	'wp_cache' => getenv('WP_CACHE') === 'false' ? false : true,
 	'disallow_file_mods' => true,
 	'force_ssl_admin' => true,
 	'automatic_updater_disabled' => true,
@@ -101,6 +102,9 @@ $table_prefix  = 'wp_';
  * in their development environments.
  */
 define('WP_DEBUG', $wp_config['wp_debug']);
+
+/** Enable cache (include 'wp-content/advanced-cache.php') */
+define('WP_CACHE', $wp_config['wp_cache']);
 
 /** Disable plugin and theme update and installation */
 define('DISALLOW_FILE_MODS', $wp_config['disallow_file_mods']);
