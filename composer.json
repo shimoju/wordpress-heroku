@@ -40,5 +40,15 @@
             "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
             "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "ln -sn ../../my-content/themes public/wp-content/my-themes || exit 0",
+            "ln -sn ../../my-content/mu-plugins public/wp-content/mu-plugins || exit 0"
+        ],
+        "post-update-cmd": [
+            "ln -sn ../../my-content/themes public/wp-content/my-themes || exit 0",
+            "ln -sn ../../my-content/mu-plugins public/wp-content/mu-plugins || exit 0"
+        ]
     }
 }
