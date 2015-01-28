@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f47e3507006881c7b87507322bd7d4e5",
+    "hash": "0bbedf94b0a1ac4a3fce780d6e5f9f3c",
     "packages": [
         {
             "name": "fancyguy/webroot-installer",
@@ -69,6 +69,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "hhvm": "~3.4"
+    },
     "platform-dev": []
 }

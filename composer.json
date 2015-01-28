@@ -26,6 +26,7 @@
         }
     ],
     "require": {
+        "hhvm": "~3.4",
         "wordpress/wordpress-ja": "*"
     },
     "extra": {
