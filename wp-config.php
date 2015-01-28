@@ -28,7 +28,12 @@ $wp_config = [
 	'secure_auth_salt' => getenv('SECURE_AUTH_SALT'),
 	'logged_in_salt' => getenv('LOGGED_IN_SALT'),
 	'nonce_salt' => getenv('NONCE_SALT'),
+
+	'wp_config_local' => __DIR__ . '/wp-config-local.php',
 ];
+
+if ( file_exists($wp_config['wp_config_local']) )
+	require($wp_config['wp_config_local']);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
