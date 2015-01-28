@@ -10,6 +10,10 @@
     ],
     "repositories": [
         {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "wordpress/wordpress-ja",
@@ -31,6 +35,10 @@
     },
     "extra": {
         "webroot-dir": "public",
-        "webroot-package": "wordpress/wordpress-ja"
+        "webroot-package": "wordpress/wordpress-ja",
+        "installer-paths": {
+            "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
     }
 }
