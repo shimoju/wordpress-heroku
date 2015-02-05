@@ -14,6 +14,13 @@ touch public/.htaccess && chmod 666 public/.htaccess
 
 ### Edit wp-config-local.php
 
+- Edit Database settings
+- Run this command and paste the output strings:
+
+```
+bin/secret_key --format array
+```
+
 ### Install WordPress
 
 ## Heroku Deploy
@@ -21,7 +28,7 @@ touch public/.htaccess && chmod 666 public/.htaccess
 ```
 heroku create your-blog-name
 heroku addons:add cleardb
-bin/secret_key
+heroku config:set `bin/secret_key --format env`
 git push heroku master
 ```
 
