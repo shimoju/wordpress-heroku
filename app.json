@@ -9,6 +9,20 @@
     "website": "https://github.com/shimoju/wordpress-heroku",
     "repository": "https://github.com/shimoju/wordpress-heroku",
     "env": {
+        "WP_ENV": {
+            "description": "[Optional] WordPress environment: production | staging (Default: production)",
+            "required": false,
+            "value": "production"
+        },
+        "WP_CACHE": {
+            "description": "[Optional] Use page cache: true | false (Default: true)",
+            "required": false,
+            "value": "true"
+        },
+        "COMPOSER_GITHUB_OAUTH_TOKEN": {
+            "description": "[Optional] GitHub access token for Composer: https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens",
+            "required": false
+        },
         "AUTH_KEY": {
             "description": "Authentication secret key",
             "generator": "secret"
