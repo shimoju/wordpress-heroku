@@ -43,14 +43,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "ln -sn ../../my-content/themes public/wp-content/my-themes || exit 0",
-            "ln -sn ../../my-content/mu-plugins public/wp-content/mu-plugins || exit 0",
-            "ln -sn ../../my-content/advanced-cache.php public/wp-content/advanced-cache.php || exit 0"
+            "sh bin/post_install"
         ],
         "post-update-cmd": [
-            "ln -sn ../../my-content/themes public/wp-content/my-themes || exit 0",
-            "ln -sn ../../my-content/mu-plugins public/wp-content/mu-plugins || exit 0",
-            "ln -sn ../../my-content/advanced-cache.php public/wp-content/advanced-cache.php || exit 0"
+            "sh bin/post_install"
         ]
     }
 }
