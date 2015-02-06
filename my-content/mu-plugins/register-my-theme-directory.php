@@ -1,3 +1,3 @@
 <?php
 
-register_theme_directory(ABSPATH . 'wp-content/my-themes');
+register_theme_directory(WP_CONTENT_DIR . '/my-themes');
