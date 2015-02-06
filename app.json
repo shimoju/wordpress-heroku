@@ -19,6 +19,11 @@
             "required": false,
             "value": "true"
         },
+        "MAILGUN_AUTO_CONFIG": {
+            "description": "[Optional] Mailgun auto config via env vars : true | false (Default: true)",
+            "required": false,
+            "value": "true"
+        },
         "COMPOSER_GITHUB_OAUTH_TOKEN": {
             "description": "[Optional] GitHub access token for Composer: https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens",
             "required": false

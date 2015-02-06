@@ -29,3 +29,10 @@ if ( $wp_config['db_host'] === false ) {
 	}
 	unset($heroku_db);
 }
+
+/* Mailgun */
+if ( getenv('MAILGUN_AUTO_CONFIG') !== 'false' && getenv('MAILGUN_SMTP_LOGIN') ) {
+	define('MAILGUN_USEAPI', true);
+	define('MAILGUN_DOMAIN', explode('@', getenv('MAILGUN_SMTP_LOGIN'))[1]);
+	define('MAILGUN_APIKEY', getenv('MAILGUN_API_KEY'));
+}
