@@ -31,7 +31,8 @@
     ],
     "require": {
         "hhvm": "~3.4",
-        "wordpress/wordpress-ja": "*"
+        "wordpress/wordpress-ja": "*",
+        "wpackagist-plugin/mailgun": "*"
     },
     "extra": {
         "webroot-dir": "public",
