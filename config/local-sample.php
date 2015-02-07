@@ -8,14 +8,14 @@ $wp_config['db_password'] = 'password_here';
 $wp_config['db_host'] = 'localhost';
 $wp_config['db_ssl'] = false;
 
-$wp_config['auth_key'] =         'put your unique phrase here';
-$wp_config['secure_auth_key'] =  'put your unique phrase here';
-$wp_config['logged_in_key'] =    'put your unique phrase here';
-$wp_config['nonce_key'] =        'put your unique phrase here';
-$wp_config['auth_salt'] =        'put your unique phrase here';
-$wp_config['secure_auth_salt'] = 'put your unique phrase here';
-$wp_config['logged_in_salt'] =   'put your unique phrase here';
-$wp_config['nonce_salt'] =       'put your unique phrase here';
+$wp_config['auth_key'] =         'put_your_unique_phrase_here';
+$wp_config['secure_auth_key'] =  'put_your_unique_phrase_here';
+$wp_config['logged_in_key'] =    'put_your_unique_phrase_here';
+$wp_config['nonce_key'] =        'put_your_unique_phrase_here';
+$wp_config['auth_salt'] =        'put_your_unique_phrase_here';
+$wp_config['secure_auth_salt'] = 'put_your_unique_phrase_here';
+$wp_config['logged_in_salt'] =   'put_your_unique_phrase_here';
+$wp_config['nonce_salt'] =       'put_your_unique_phrase_here';
 
 $wp_config['wp_debug'] = true;
 $wp_config['wp_cache'] = false;
