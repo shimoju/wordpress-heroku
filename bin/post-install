@@ -2,6 +2,6 @@
 
 app_root=$(cd $(dirname "${0}")/.. && pwd)
 
-ln -sn ../../my-content/themes "${app_root}/public/wp-content/my-themes" || :
-ln -sn ../../my-content/mu-plugins "${app_root}/public/wp-content/mu-plugins" || :
-ln -sn ../../my-content/advanced-cache.php "${app_root}/public/wp-content/advanced-cache.php" || :
+ln -sn ../../assets/wp-content/themes "${app_root}/public/wp-content/my-themes" || :
+ln -sn ../../assets/wp-content/mu-plugins "${app_root}/public/wp-content/mu-plugins" || :
+ln -sn ../../assets/wp-content/advanced-cache.php "${app_root}/public/wp-content/advanced-cache.php" || :
