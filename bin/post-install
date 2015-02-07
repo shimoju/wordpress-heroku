@@ -1,7 +1,29 @@
 #!/bin/sh
 
 app_root=$(cd $(dirname "${0}")/.. && pwd)
+assets="${app_root}/assets"
+public="${app_root}/public"
 
-ln -sn ../../assets/wp-content/themes "${app_root}/public/wp-content/my-themes" || :
-ln -sn ../../assets/wp-content/mu-plugins "${app_root}/public/wp-content/mu-plugins" || :
-ln -sn ../../assets/wp-content/advanced-cache.php "${app_root}/public/wp-content/advanced-cache.php" || :
+# Symlink assets/* => public/*
+for path in "${assets}"/*; do
+  name=$(basename "${path}")
+  if [ ! -e "${public}/${name}" ]; then
+    ln -snv "../assets/${name}" "${public}/${name}"
+  fi
+done
+
+# Symlink assets/wp-{admin,content,includes}/* => public/wp-{admin,content,includes}/*
+for wp_dir in wp-admin wp-content wp-includes; do
+  [ ! -d "${assets}/${wp_dir}" ] && continue
+  for path in "${assets}/${wp_dir}"/*; do
+    name=$(basename "${path}")
+    if [ ! -e "${public}/${wp_dir}/${name}" ]; then
+      ln -snv "../../assets/${wp_dir}/${name}" "${public}/${wp_dir}/${name}"
+    fi
+  done
+done
+
+# Exceptions
+ln -snv "../../assets/wp-content/themes" "${public}/wp-content/my-themes" 2>/dev/null
+
+exit 0
