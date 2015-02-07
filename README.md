@@ -20,7 +20,7 @@ touch public/.htaccess && chmod 666 public/.htaccess
 - Run this command and paste the output strings:
 
 ```
-bin/secret_key --format array
+bin/secret-key --format array
 ```
 
 ### Install WordPress
@@ -32,7 +32,7 @@ heroku create your-blog-name
 heroku addons:add cleardb
 heroku addons:add mailgun
 heroku addons:add papertrail
-heroku config:set `bin/secret_key --format env`
+heroku config:set `bin/secret-key --format env`
 git push heroku master
 ```
 

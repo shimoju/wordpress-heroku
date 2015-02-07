@@ -44,10 +44,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "sh bin/post_install"
+            "sh bin/post-install"
         ],
         "post-update-cmd": [
-            "sh bin/post_install"
+            "sh bin/post-install"
         ]
     }
 }
