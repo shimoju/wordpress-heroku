@@ -37,8 +37,8 @@ $wp_config = [
 	'automatic_updater_disabled' => true,
 
 	'wp_env' => getenv('WP_ENV') ?: 'production',
-	'wp_config_env' => __DIR__ . '/wp-config-env.php',
-	'wp_config_local' => __DIR__ . '/wp-config-local.php',
+	'wp_config_env' => __DIR__ . '/config/env.php',
+	'wp_config_local' => __DIR__ . '/config/local.php',
 ];
 
 /* Settings for each environment */

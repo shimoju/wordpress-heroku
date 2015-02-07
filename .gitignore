@@ -1,4 +1,4 @@
 composer.phar
 /vendor
 /public
-/wp-config-local.php
+/config/local.php

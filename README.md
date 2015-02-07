@@ -10,11 +10,11 @@ WordPress on Heroku
 git clone https://github.com/shimoju/wordpress-heroku.git your-blog-name
 cd your-blog-name
 composer install --ignore-platform-reqs
-cp wp-config-local-sample.php wp-config-local.php
+cp config/local-sample.php config/local.php
 touch public/.htaccess && chmod 666 public/.htaccess
 ```
 
-### Edit wp-config-local.php
+### Edit config/local.php
 
 - Edit Database settings
 - Run this command and paste the output strings:
