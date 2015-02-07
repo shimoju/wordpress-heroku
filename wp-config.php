@@ -19,6 +19,7 @@ $wp_config = [
 	'db_user' => getenv('DB_USER'),
 	'db_password' => getenv('DB_PASSWORD'),
 	'db_host' => getenv('DB_HOST'),
+	'db_ssl' => getenv('DB_SSL') === 'false' ? false : true,
 
 	'auth_key' => getenv('AUTH_KEY'),
 	'secure_auth_key' => getenv('SECURE_AUTH_KEY'),
@@ -65,6 +66,13 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+/** MySQL options */
+if ( $wp_config['db_ssl'] ) {
+	define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_COMPRESS | MYSQLI_CLIENT_SSL);
+} else {
+	define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_COMPRESS);
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.

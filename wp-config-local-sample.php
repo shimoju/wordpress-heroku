@@ -6,6 +6,7 @@ $wp_config['db_name'] = 'database_name_here';
 $wp_config['db_user'] = 'username_here';
 $wp_config['db_password'] = 'password_here';
 $wp_config['db_host'] = 'localhost';
+$wp_config['db_ssl'] = false;
 
 $wp_config['auth_key'] =         'put your unique phrase here';
 $wp_config['secure_auth_key'] =  'put your unique phrase here';
