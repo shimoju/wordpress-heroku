@@ -29,9 +29,9 @@ bin/secret-key --format array
 
 ```
 heroku create your-blog-name
-heroku addons:add cleardb
-heroku addons:add mailgun
-heroku addons:add papertrail
+heroku addons:create cleardb
+heroku addons:create mailgun
+heroku addons:create papertrail
 heroku config:set `bin/secret-key --format env`
 git push heroku master
 ```
