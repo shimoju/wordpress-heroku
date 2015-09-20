@@ -18,10 +18,10 @@
             "package": {
                 "name": "wordpress/wordpress-ja",
                 "type": "webroot",
-                "version": "4.3",
+                "version": "4.3.1",
                 "dist": {
                     "type": "zip",
-                    "url": "https://ja.wordpress.org/wordpress-4.3-ja.zip"
+                    "url": "https://ja.wordpress.org/wordpress-4.3.1-ja.zip"
                 },
                 "require": {
                     "fancyguy/webroot-installer": "~1.1"
