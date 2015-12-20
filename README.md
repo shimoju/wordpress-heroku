@@ -49,7 +49,7 @@ heroku open
 Edit `Procfile`
 
 ```
-web: vendor/bin/heroku-hhvm-apache2 -C config/apache.conf public/
+web: vendor/bin/heroku-php-apache2 -C config/apache.conf public
 ```
 
 ## License
