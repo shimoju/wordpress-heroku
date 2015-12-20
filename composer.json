@@ -30,7 +30,7 @@
         }
     ],
     "require": {
-        "hhvm": "~3.4",
+        "php": "~7.0.1",
         "ext-mbstring": "*",
         "wordpress/wordpress-ja": "*",
         "wpackagist-plugin/mailgun": "*"
