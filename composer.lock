@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "684da1dc0fa4070ddeba9121bffd8ede",
-    "content-hash": "20929713b38767cd3300876892f2c9c1",
+    "hash": "6015f085367df591ce8d6137e3048db6",
+    "content-hash": "e242d008e086cd1446dcaf170501176a",
     "packages": [
         {
             "name": "composer/installers",
@@ -149,10 +149,10 @@
         },
         {
             "name": "wordpress/wordpress-ja",
-            "version": "4.3.1",
+            "version": "4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://ja.wordpress.org/wordpress-4.3.1-ja.zip",
+                "url": "https://ja.wordpress.org/wordpress-4.4-ja.zip",
                 "reference": null,
                 "shasum": null
             },
