@@ -9,7 +9,7 @@ WordPress on Heroku
 ```
 git clone https://github.com/shimoju/wordpress-heroku.git your-blog-name
 cd your-blog-name
-composer install --ignore-platform-reqs
+composer install
 cp config/local-sample.php config/local.php
 touch public/.htaccess && chmod 666 public/.htaccess
 ```
