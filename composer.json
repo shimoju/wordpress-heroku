@@ -31,6 +31,7 @@
     ],
     "require": {
         "php": "~7.0.1",
+        "ext-gd": "*",
         "ext-mbstring": "*",
         "wordpress/wordpress-ja": "*",
         "wpackagist-plugin/jetpack": "*",
