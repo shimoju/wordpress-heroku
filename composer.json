@@ -31,9 +31,14 @@
     ],
     "require": {
         "php": "~7.0.1",
+        "ext-gd": "*",
         "ext-mbstring": "*",
         "wordpress/wordpress-ja": "*",
-        "wpackagist-plugin/mailgun": "*"
+        "wpackagist-plugin/jetpack": "*",
+        "wpackagist-plugin/mailgun": "*",
+        "wpackagist-plugin/nephila-clavata": "*",
+        "wpackagist-plugin/siteguard": "*",
+        "wpackagist-plugin/wordpress-seo": "*"
     },
     "extra": {
         "webroot-dir": "public",
