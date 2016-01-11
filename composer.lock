@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4119ca8eb43e6b6e5f28d62bd197ccb5",
-    "content-hash": "9362ac7fc3e0e75a77b23074a30f7219",
+    "hash": "37613956718b24b7d8de6a02aba1eb8a",
+    "content-hash": "a8bfc880d35ff5845a1d83eeebedd2ef",
     "packages": [
         {
             "name": "composer/installers",
@@ -220,6 +220,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/nephila-clavata/"
+        },
+        {
+            "name": "wpackagist-plugin/siteguard",
+            "version": "1.2.5",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/siteguard/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/siteguard.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/siteguard/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

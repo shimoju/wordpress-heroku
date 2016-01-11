@@ -36,6 +36,7 @@
         "wpackagist-plugin/jetpack": "*",
         "wpackagist-plugin/mailgun": "*",
         "wpackagist-plugin/nephila-clavata": "*",
+        "wpackagist-plugin/siteguard": "*",
         "wpackagist-plugin/wordpress-seo": "*"
     },
     "extra": {
