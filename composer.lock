@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "59d23a0e55b50163b00040c435905991",
-    "content-hash": "a0592c32745b187ef3491a2a5b250e10",
+    "hash": "4119ca8eb43e6b6e5f28d62bd197ccb5",
+    "content-hash": "9362ac7fc3e0e75a77b23074a30f7219",
     "packages": [
         {
             "name": "composer/installers",
@@ -200,6 +200,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/mailgun/"
+        },
+        {
+            "name": "wpackagist-plugin/nephila-clavata",
+            "version": "0.2.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/nephila-clavata/",
+                "reference": "tags/0.2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/nephila-clavata.0.2.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/nephila-clavata/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
