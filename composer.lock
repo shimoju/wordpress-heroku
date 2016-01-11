@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "925f60fba280e6ce505a41a9159c8e76",
-    "content-hash": "25964f228a6ed71d1af36ba39d16d099",
+    "hash": "59d23a0e55b50163b00040c435905991",
+    "content-hash": "a0592c32745b187ef3491a2a5b250e10",
     "packages": [
         {
             "name": "composer/installers",
@@ -160,6 +160,26 @@
                 "fancyguy/webroot-installer": "~1.1"
             },
             "type": "webroot"
+        },
+        {
+            "name": "wpackagist-plugin/jetpack",
+            "version": "3.8.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/jetpack/",
+                "reference": "tags/3.8.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.8.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
             "name": "wpackagist-plugin/mailgun",
