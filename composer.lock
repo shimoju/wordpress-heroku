@@ -163,15 +163,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.9.1",
+            "version": "3.9.4",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.9.1"
+                "url": "https://plugins.svn.wordpress.org/jetpack/",
+                "reference": "tags/3.9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.9.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.9.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -186,7 +186,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/mailgun/",
+                "url": "https://plugins.svn.wordpress.org/mailgun/",
                 "reference": "tags/1.4.1"
             },
             "dist": {
@@ -206,7 +206,7 @@
             "version": "0.2.4",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/nephila-clavata/",
+                "url": "https://plugins.svn.wordpress.org/nephila-clavata/",
                 "reference": "tags/0.2.4"
             },
             "dist": {
@@ -226,7 +226,7 @@
             "version": "1.2.5",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/siteguard/",
+                "url": "https://plugins.svn.wordpress.org/siteguard/",
                 "reference": "trunk"
             },
             "dist": {
@@ -243,15 +243,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.0.7",
+            "version": "3.1.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.0.7"
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/3.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
