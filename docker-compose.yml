@@ -1,0 +1,44 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    environment:
+      DATABASE_URL: mysql://root:@db/wordpress
+      DB_SSL: 'false'
+      WP_DEBUG: 'true'
+      WP_CACHE: 'false'
+      DISALLOW_FILE_MODS: 'false'
+      FORCE_SSL_ADMIN: 'false'
+      AUTOMATIC_UPDATER_DISABLED: 'true'
+      AUTH_KEY: aB7h9GRNtUHBK6iHmL3pWxsRGT7rGfSrUEsvgKbvveY34QXTKxiNkQ7b1p7brDed
+      SECURE_AUTH_KEY: vFqsr4TBGsBUvnnBtA1ZxrvDkV93lRQqBOLUxWRFjI2gObE0BiZdlejZEJ1natwj
+      LOGGED_IN_KEY: fibr9w8wvmJRsMMXHpOx7utkh5uae93785sI1xKwabLHjDklToE7PxABBmA02fH3
+      NONCE_KEY: TyU0qfxIxvT179V8CdhWdjEoRudHfvl03e0MUdAf5CwXd0QGpPLQLliup1qu9m0K
+      AUTH_SALT: isJaWcMiV8J4otb2huBkvfAdah271z6YChiWntj3Jv3wGEdbb6q6rCA2pCrsdMBU
+      SECURE_AUTH_SALT: J1adznTCWF8buIoc5Z9ddXN9SpSVk3RXDWr91ub8D38XtyCSv10kD8MGnZYHYxQr
+      LOGGED_IN_SALT: xpdLVa0PguOs9FzowF0ElnxLJgJ1cSc1IZyk0gFjKKsCqPkYHNdQRPACBQ20hXM5
+      NONCE_SALT: sCftRfBwYMCcqeYUAed18E5R5Od2OwXYr3KNa9gt1d2YfFE23uzmpAv2a2TUgbEs
+    ports:
+      - 8080:80
+    volumes:
+      - .:/app
+      - composer:/app/vendor
+      - public:/app/public
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.5
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: wordpress
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  composer:
+  public:
+  mysql:
