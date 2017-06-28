@@ -34,6 +34,7 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "wordpress/wordpress-ja": "*",
+        "wp-cli/wp-cli": "~1.2",
         "wpackagist-plugin/amazon-s3-and-cloudfront": "*",
         "wpackagist-plugin/amazon-web-services": "*",
         "wpackagist-plugin/autoptimize": "*",
