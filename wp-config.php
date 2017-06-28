@@ -18,64 +18,36 @@
  * @package WordPress
  */
 
-$wp_config = [
-	'db_name' => getenv('DB_NAME'),
-	'db_user' => getenv('DB_USER'),
-	'db_password' => getenv('DB_PASSWORD'),
-	'db_host' => getenv('DB_HOST'),
-	'db_ssl' => getenv('DB_SSL') === 'false' ? false : true,
-
-	'auth_key' => getenv('AUTH_KEY'),
-	'secure_auth_key' => getenv('SECURE_AUTH_KEY'),
-	'logged_in_key' => getenv('LOGGED_IN_KEY'),
-	'nonce_key' => getenv('NONCE_KEY'),
-	'auth_salt' => getenv('AUTH_SALT'),
-	'secure_auth_salt' => getenv('SECURE_AUTH_SALT'),
-	'logged_in_salt' => getenv('LOGGED_IN_SALT'),
-	'nonce_salt' => getenv('NONCE_SALT'),
-
-	'wp_debug' => false,
-	'wp_cache' => getenv('WP_CACHE') === 'false' ? false : true,
-	'disallow_file_mods' => true,
-	'force_ssl_admin' => true,
-	'automatic_updater_disabled' => true,
-
-	'wp_env' => getenv('WP_ENV') ?: 'production',
-	'wp_config_env' => __DIR__ . '/config/env.php',
-	'wp_config_local' => __DIR__ . '/config/local.php',
-];
-
-/* Settings for each environment */
-if ( file_exists($wp_config['wp_config_local']) ) {
-	require($wp_config['wp_config_local']);
+if ( getenv('CLEARDB_DATABASE_URL') ) {
+	$db_url = parse_url(getenv('CLEARDB_DATABASE_URL'));
 } else {
-	require($wp_config['wp_config_env']);
+	$db_url = parse_url(getenv('DATABASE_URL'));
 }
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', $wp_config['db_name']);
+define('DB_NAME', trim($db_url['path'], '/'));
 
 /** MySQL database username */
-define('DB_USER', $wp_config['db_user']);
+define('DB_USER', $db_url['user']);
 
 /** MySQL database password */
-define('DB_PASSWORD', $wp_config['db_password']);
+define('DB_PASSWORD', $db_url['pass']);
 
 /** MySQL hostname */
-define('DB_HOST', $wp_config['db_host']);
+define('DB_HOST', $db_url['host']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+define('DB_COLLATE', 'utf8mb4_general_ci');
 
 /** MySQL options */
-if ( $wp_config['db_ssl'] ) {
-	define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_COMPRESS | MYSQLI_CLIENT_SSL);
-} else {
+if ( getenv('DB_SSL') === 'false' ) {
 	define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_COMPRESS);
+} else {
+	define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_COMPRESS | MYSQLI_CLIENT_SSL);
 }
 
 /**#@+
@@ -87,14 +59,14 @@ if ( $wp_config['db_ssl'] ) {
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         $wp_config['auth_key']);
-define('SECURE_AUTH_KEY',  $wp_config['secure_auth_key']);
-define('LOGGED_IN_KEY',    $wp_config['logged_in_key']);
-define('NONCE_KEY',        $wp_config['nonce_key']);
-define('AUTH_SALT',        $wp_config['auth_salt']);
-define('SECURE_AUTH_SALT', $wp_config['secure_auth_salt']);
-define('LOGGED_IN_SALT',   $wp_config['logged_in_salt']);
-define('NONCE_SALT',       $wp_config['nonce_salt']);
+define('AUTH_KEY',         getenv('AUTH_KEY'));
+define('SECURE_AUTH_KEY',  getenv('SECURE_AUTH_KEY'));
+define('LOGGED_IN_KEY',    getenv('LOGGED_IN_KEY'));
+define('NONCE_KEY',        getenv('NONCE_KEY'));
+define('AUTH_SALT',        getenv('AUTH_SALT'));
+define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
+define('LOGGED_IN_SALT',   getenv('LOGGED_IN_SALT'));
+define('NONCE_SALT',       getenv('NONCE_SALT'));
 
 /**#@-*/
 
@@ -118,19 +90,19 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', $wp_config['wp_debug']);
+define('WP_DEBUG', getenv('WP_DEBUG') === 'true' ? true : false);
 
 /** Enable cache (include 'wp-content/advanced-cache.php') */
-define('WP_CACHE', $wp_config['wp_cache']);
+define('WP_CACHE', getenv('WP_CACHE') === 'true' ? true : false);
 
 /** Disable plugin and theme update and installation */
-define('DISALLOW_FILE_MODS', $wp_config['disallow_file_mods']);
+define('DISALLOW_FILE_MODS', getenv('DISALLOW_FILE_MODS') === 'false' ? false : true);
 
 /** Require SSL for admin and logins */
-define('FORCE_SSL_ADMIN', $wp_config['force_ssl_admin']);
+define('FORCE_SSL_ADMIN', getenv('FORCE_SSL_ADMIN') === 'false' ? false : true);
 
 /** Disable WordPress auto updates */
-define('AUTOMATIC_UPDATER_DISABLED', $wp_config['automatic_updater_disabled']);
+define('AUTOMATIC_UPDATER_DISABLED', getenv('AUTOMATIC_UPDATER_DISABLED') === 'false' ? false : true);
 
 /**
  * Check 'HTTP_X_FORWARDED_PROTO' header
