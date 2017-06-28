@@ -1,69 +1,62 @@
 {
-    "name": "wordpress-heroku",
-    "description": "WordPress on Heroku",
-    "keywords": [
-        "Blog",
-        "PHP",
-        "WordPress"
-    ],
-    "website": "https://github.com/shimoju/wordpress-heroku",
-    "repository": "https://github.com/shimoju/wordpress-heroku",
-    "env": {
-        "WP_ENV": {
-            "description": "[Optional] WordPress environment: production | staging (Default: production)",
-            "required": false,
-            "value": "production"
-        },
-        "WP_CACHE": {
-            "description": "[Optional] Use page cache: true | false (Default: true)",
-            "required": false,
-            "value": "true"
-        },
-        "MAILGUN_AUTO_CONFIG": {
-            "description": "[Optional] Mailgun auto config via env vars : true | false (Default: true)",
-            "required": false,
-            "value": "true"
-        },
-        "COMPOSER_GITHUB_OAUTH_TOKEN": {
-            "description": "[Optional] GitHub access token for Composer: https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens",
-            "required": false
-        },
-        "AUTH_KEY": {
-            "description": "Authentication secret key",
-            "generator": "secret"
-        },
-        "SECURE_AUTH_KEY": {
-            "description": "Authentication secret key",
-            "generator": "secret"
-        },
-        "LOGGED_IN_KEY": {
-            "description": "Authentication secret key",
-            "generator": "secret"
-        },
-        "NONCE_KEY": {
-            "description": "Authentication secret key",
-            "generator": "secret"
-        },
-        "AUTH_SALT": {
-            "description": "Authentication secret salt",
-            "generator": "secret"
-        },
-        "SECURE_AUTH_SALT": {
-            "description": "Authentication secret salt",
-            "generator": "secret"
-        },
-        "LOGGED_IN_SALT": {
-            "description": "Authentication secret salt",
-            "generator": "secret"
-        },
-        "NONCE_SALT": {
-            "description": "Authentication secret salt",
-            "generator": "secret"
-        }
+  "name": "wordpress-heroku",
+  "description": "WordPress on Heroku",
+  "keywords": [
+    "Blog",
+    "PHP",
+    "WordPress"
+  ],
+  "website": "https://github.com/shimoju/wordpress-heroku",
+  "repository": "https://github.com/shimoju/wordpress-heroku",
+  "scripts": {
+  },
+  "env": {
+    "COMPOSER_GITHUB_OAUTH_TOKEN": {
+      "description": "GitHub access token for Composer: https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens",
+      "required": true
     },
-    "addons": [
-        "cleardb",
-        "mailgun",
-        "papertrail"
-    ]
+    "AUTH_KEY": {
+      "description": "Authentication secret key",
+      "generator": "secret"
+    },
+    "AUTH_SALT": {
+      "description": "Authentication secret salt",
+      "generator": "secret"
+    },
+    "LOGGED_IN_KEY": {
+      "description": "Authentication secret key",
+      "generator": "secret"
+    },
+    "LOGGED_IN_SALT": {
+      "description": "Authentication secret salt",
+      "generator": "secret"
+    },
+    "NONCE_KEY": {
+      "description": "Authentication secret key",
+      "generator": "secret"
+    },
+    "NONCE_SALT": {
+      "description": "Authentication secret salt",
+      "generator": "secret"
+    },
+    "SECURE_AUTH_KEY": {
+      "description": "Authentication secret key",
+      "generator": "secret"
+    },
+    "SECURE_AUTH_SALT": {
+      "description": "Authentication secret salt",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "cleardb",
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
 }
