@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "606c4ee7407f1ce28361bed8319d1f50",
+    "content-hash": "538c2318ff8159db9e7c651648ecb005",
     "packages": [
         {
             "name": "composer/installers",
@@ -164,10 +164,10 @@
         },
         {
             "name": "wordpress/wordpress-ja",
-            "version": "4.7.5",
+            "version": "4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://ja.wordpress.org/wordpress-4.7.5-ja.zip",
+                "url": "https://ja.wordpress.org/wordpress-4.8-ja.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -177,16 +177,16 @@
             "type": "webroot"
         },
         {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "4.9",
+            "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
+            "version": "1.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/4.9"
+                "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
+                "reference": "tags/1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.4.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -194,19 +194,19 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jetpack/"
+            "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
         },
         {
-            "name": "wpackagist-plugin/mailgun",
-            "version": "1.5.8.2",
+            "name": "wpackagist-plugin/amazon-web-services",
+            "version": "1.0.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/mailgun/",
-                "reference": "tags/1.5.8.2"
+                "url": "https://plugins.svn.wordpress.org/amazon-web-services/",
+                "reference": "tags/1.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailgun.1.5.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.1.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -214,19 +214,19 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/mailgun/"
+            "homepage": "https://wordpress.org/plugins/amazon-web-services/"
         },
         {
-            "name": "wpackagist-plugin/nephila-clavata",
-            "version": "0.2.5",
+            "name": "wpackagist-plugin/autoptimize",
+            "version": "2.2.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/nephila-clavata/",
-                "reference": "tags/0.2.5"
+                "url": "https://plugins.svn.wordpress.org/autoptimize/",
+                "reference": "tags/2.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/nephila-clavata.0.2.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -234,7 +234,47 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/nephila-clavata/"
+            "homepage": "https://wordpress.org/plugins/autoptimize/"
+        },
+        {
+            "name": "wpackagist-plugin/cloudflare",
+            "version": "3.2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cloudflare/",
+                "reference": "tags/3.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cloudflare.3.2.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cloudflare/"
+        },
+        {
+            "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
+            "version": "1.11.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip?timestamp=1495021825",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/sendgrid-email-delivery-simplified/"
         },
         {
             "name": "wpackagist-plugin/siteguard",
@@ -246,7 +286,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteguard.zip?timestamp=1481365960",
+                "url": "https://downloads.wordpress.org/plugin/siteguard.zip?timestamp=1496907572",
                 "reference": null,
                 "shasum": null
             },
@@ -258,15 +298,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.8",
+            "version": "4.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.8"
+                "reference": "tags/4.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.9.zip",
                 "reference": null,
                 "shasum": null
             },

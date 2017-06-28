@@ -18,10 +18,10 @@
             "package": {
                 "name": "wordpress/wordpress-ja",
                 "type": "webroot",
-                "version": "4.7.5",
+                "version": "4.8",
                 "dist": {
                     "type": "zip",
-                    "url": "https://ja.wordpress.org/wordpress-4.7.5-ja.zip"
+                    "url": "https://ja.wordpress.org/wordpress-4.8-ja.zip"
                 },
                 "require": {
                     "fancyguy/webroot-installer": "~1.1"
@@ -34,9 +34,11 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "wordpress/wordpress-ja": "*",
-        "wpackagist-plugin/jetpack": "*",
-        "wpackagist-plugin/mailgun": "*",
-        "wpackagist-plugin/nephila-clavata": "*",
+        "wpackagist-plugin/amazon-s3-and-cloudfront": "*",
+        "wpackagist-plugin/amazon-web-services": "*",
+        "wpackagist-plugin/autoptimize": "*",
+        "wpackagist-plugin/cloudflare": "*",
+        "wpackagist-plugin/sendgrid-email-delivery-simplified": "*",
         "wpackagist-plugin/siteguard": "*",
         "wpackagist-plugin/wordpress-seo": "*"
     },
