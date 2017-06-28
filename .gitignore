@@ -1,6 +1,4 @@
 .DS_Store
-/.vagrant
-composer.phar
 /vendor
 /public
-/config/local.php
+docker-compose.override.yml
