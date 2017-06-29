@@ -11,9 +11,13 @@
   "scripts": {
   },
   "env": {
+    "HEROKU_APP_NAME": {
+      "description": "[Optional] Heroku app name",
+      "required": false
+    },
     "COMPOSER_GITHUB_OAUTH_TOKEN": {
-      "description": "GitHub access token for Composer: https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens",
-      "required": true
+      "description": "[Optional] GitHub access token for Composer: https://devcenter.heroku.com/articles/php-support#custom-github-oauth-tokens",
+      "required": false
     },
     "AUTH_KEY": {
       "description": "Authentication secret key",
