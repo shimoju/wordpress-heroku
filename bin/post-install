@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 app_root=$(cd $(dirname "${0}")/.. && pwd)
 assets="${app_root}/assets"
 public="${app_root}/public"
@@ -24,6 +26,4 @@ for wp_dir in wp-admin wp-content wp-includes; do
 done
 
 # Exceptions
-ln -snv "../../assets/wp-content/themes" "${public}/wp-content/my-themes" 2>/dev/null
-
-exit 0
+ln -snv "../../assets/wp-content/themes" "${public}/wp-content/my-themes" 2>/dev/null || true

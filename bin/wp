@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -eu
 
 app_root=$(cd $(dirname "${0}")/.. && pwd)
 exec "${app_root}/vendor/bin/wp" "--path=${app_root}/public" --allow-root "$@"
