@@ -23,31 +23,31 @@
       "description": "Authentication secret key",
       "generator": "secret"
     },
-    "AUTH_SALT": {
-      "description": "Authentication secret salt",
+    "SECURE_AUTH_KEY": {
+      "description": "Authentication secret key",
       "generator": "secret"
     },
     "LOGGED_IN_KEY": {
       "description": "Authentication secret key",
       "generator": "secret"
     },
-    "LOGGED_IN_SALT": {
-      "description": "Authentication secret salt",
-      "generator": "secret"
-    },
     "NONCE_KEY": {
       "description": "Authentication secret key",
       "generator": "secret"
     },
-    "NONCE_SALT": {
+    "AUTH_SALT": {
       "description": "Authentication secret salt",
       "generator": "secret"
     },
-    "SECURE_AUTH_KEY": {
-      "description": "Authentication secret key",
+    "SECURE_AUTH_SALT": {
+      "description": "Authentication secret salt",
       "generator": "secret"
     },
-    "SECURE_AUTH_SALT": {
+    "LOGGED_IN_SALT": {
+      "description": "Authentication secret salt",
+      "generator": "secret"
+    },
+    "NONCE_SALT": {
       "description": "Authentication secret salt",
       "generator": "secret"
     }
