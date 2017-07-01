@@ -33,6 +33,7 @@ Access [http://localhost:8080/](http://localhost:8080/)
 ```sh
 heroku create your-blog-name
 heroku addons:create cleardb
+heroku addons:create newrelic
 heroku addons:create papertrail
 heroku config:set `bin/secret-key --format env`
 git push heroku master
