@@ -31,10 +31,12 @@
     ],
     "require": {
         "php": "~7.1.3",
+        "ext-apcu": "*",
         "ext-gd": "*",
         "ext-mbstring": "*",
         "wordpress/wordpress-ja": "*",
         "wp-cli/wp-cli": "~1.2",
+        "wpackagist-plugin/001-prime-strategy-translate-accelerator": "*",
         "wpackagist-plugin/amazon-s3-and-cloudfront": "*",
         "wpackagist-plugin/amazon-web-services": "*",
         "wpackagist-plugin/autoptimize": "*",
