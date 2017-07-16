@@ -1,12 +1,16 @@
-FROM php:7.1.3-apache
+FROM php:7.1.3-fpm
 
 ENV LANG=C.UTF-8 \
   LC_ALL=C.UTF-8 \
   DEBIAN_FRONTEND=noninteractive
 
+WORKDIR /app
+
 RUN apt-get update -qq && apt-get install -qq curl \
   && curl -fsSL https://deb.nodesource.com/setup_8.x | bash - \
   && apt-get install -qq --no-install-recommends \
+    nginx \
+    supervisor \
     build-essential \
     nodejs \
     git \
@@ -17,6 +21,8 @@ RUN apt-get update -qq && apt-get install -qq curl \
   && rm -rf /var/lib/apt/lists/* \
   && docker-php-ext-configure gd --with-jpeg-dir=/usr --with-png-dir=/usr \
   && docker-php-ext-install gd mysqli opcache zip \
+  && pecl install apcu apcu_bc-beta \
+  && docker-php-ext-enable --ini-name docker-php-ext-apcu.ini apcu apc \
   # Composer
   && curl -fsSLo composer-setup.php https://getcomposer.org/installer \
   && echo '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410 composer-setup.php' | sha384sum -c - \
@@ -25,12 +31,40 @@ RUN apt-get update -qq && apt-get install -qq curl \
   && composer config -g repos.packagist composer https://packagist.jp \
   && composer global require hirak/prestissimo
 
-ENV APP_ROOT=/app
-ENV DOCUMENT_ROOT=$APP_ROOT/public
-
-WORKDIR $APP_ROOT
-
 RUN { \
+    echo '[supervisord]'; \
+    echo 'nodaemon=true'; \
+    echo '[program:nginx]'; \
+    echo 'command=/usr/sbin/nginx -g "daemon off;"'; \
+    echo 'stdout_logfile=/dev/stdout'; \
+    echo 'stdout_logfile_maxbytes=0'; \
+    echo 'stderr_logfile=/dev/stderr'; \
+    echo 'stderr_logfile_maxbytes=0'; \
+    echo '[program:php-fpm]'; \
+    echo 'command=/usr/local/sbin/php-fpm'; \
+    echo 'stdout_logfile=/dev/stdout'; \
+    echo 'stdout_logfile_maxbytes=0'; \
+    echo 'stderr_logfile=/dev/stderr'; \
+    echo 'stderr_logfile_maxbytes=0'; \
+  } > /etc/supervisor/conf.d/supervisord.conf \
+	&& ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log \
+  && { \
+    echo 'server {'; \
+    echo '  listen 80 default_server;'; \
+    echo '  server_name _;'; \
+    echo '  root /app/public;'; \
+    echo '  index index.php index.html index.htm;'; \
+    echo '  location ~ \.php$ {'; \
+    echo '    include snippets/fastcgi-php.conf;'; \
+    echo '    fastcgi_pass unix:/run/php-fpm.sock;'; \
+    echo '  }'; \
+    echo '  location / {'; \
+    echo '    try_files $uri $uri/ /index.php?$args;'; \
+    echo '  }'; \
+    echo '}'; \
+  } > /etc/nginx/sites-available/default \
+  && { \
     echo 'opcache.memory_consumption=128'; \
     echo 'opcache.interned_strings_buffer=8'; \
     echo 'opcache.max_accelerated_files=4000'; \
@@ -38,21 +72,7 @@ RUN { \
     echo 'opcache.fast_shutdown=1'; \
     echo 'opcache.enable_cli=1'; \
   } > /usr/local/etc/php/conf.d/opcache-recommended.ini \
-  && { \
-    echo '<VirtualHost *:80>'; \
-    echo '  DocumentRoot ${DOCUMENT_ROOT}'; \
-    echo '  ErrorLog ${APACHE_LOG_DIR}/error.log'; \
-    echo '  CustomLog ${APACHE_LOG_DIR}/access.log combined'; \
-    echo '  <Directory ${DOCUMENT_ROOT}>'; \
-    echo '    AllowOverride None'; \
-    echo '    Require all granted'; \
-    echo '    RewriteEngine On'; \
-    echo '    RewriteBase /'; \
-    echo '    RewriteRule ^index\.php$ - [L]'; \
-    echo '    RewriteCond %{REQUEST_FILENAME} !-f'; \
-    echo '    RewriteCond %{REQUEST_FILENAME} !-d'; \
-    echo '    RewriteRule . /index.php [L]'; \
-    echo '  </Directory>'; \
-    echo '</VirtualHost>'; \
-  } > ${APACHE_CONFDIR}/sites-available/000-default.conf \
-  && a2enmod rewrite expires
+  && sed -i 's|^listen = \[::\]:9000$|listen = /run/php-fpm.sock\nlisten.owner = www-data\nlisten.group = www-data|g' /usr/local/etc/php-fpm.d/zz-docker.conf
+
+EXPOSE 80
+CMD ["/usr/bin/supervisord"]
