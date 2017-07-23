@@ -47,8 +47,8 @@ RUN { \
     echo 'stderr_logfile=/dev/stderr'; \
     echo 'stderr_logfile_maxbytes=0'; \
   } > /etc/supervisor/conf.d/supervisord.conf \
-	&& ln -sf /dev/stdout /var/log/nginx/access.log \
-	&& ln -sf /dev/stderr /var/log/nginx/error.log \
+  && ln -sf /dev/stdout /var/log/nginx/access.log \
+  && ln -sf /dev/stderr /var/log/nginx/error.log \
   && { \
     echo 'server {'; \
     echo '  listen 80 default_server;'; \
