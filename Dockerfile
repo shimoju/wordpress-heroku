@@ -50,6 +50,10 @@ RUN { \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
   && ln -sf /dev/stderr /var/log/nginx/error.log \
   && { \
+    echo 'upstream php-fpm {'; \
+    echo '  server unix:/run/php-fpm.sock max_fails=0;'; \
+    echo '  keepalive 2;'; \
+    echo '}'; \
     echo 'server {'; \
     echo '  listen 80 default_server;'; \
     echo '  server_name _;'; \
@@ -57,7 +61,8 @@ RUN { \
     echo '  index index.php index.html index.htm;'; \
     echo '  location ~ \.php$ {'; \
     echo '    include snippets/fastcgi-php.conf;'; \
-    echo '    fastcgi_pass unix:/run/php-fpm.sock;'; \
+    echo '    fastcgi_pass php-fpm;'; \
+    echo '    fastcgi_keep_conn on;'; \
     echo '  }'; \
     echo '  location / {'; \
     echo '    try_files $uri $uri/ /index.php?$args;'; \
