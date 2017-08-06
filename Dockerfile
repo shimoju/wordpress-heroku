@@ -1,4 +1,4 @@
-FROM php:7.1.3-fpm
+FROM php:7.1.8-fpm
 
 ENV LANG=C.UTF-8 \
   LC_ALL=C.UTF-8 \
