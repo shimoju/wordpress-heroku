@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "44fa0f211f735207f425f6cc82fad50f",
+    "content-hash": "da7a1fd6eeba48dae95dfaf74e6ae9ec",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1554,10 +1554,10 @@
         },
         {
             "name": "wordpress/wordpress-ja",
-            "version": "4.8",
+            "version": "4.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://ja.wordpress.org/wordpress-4.8-ja.zip",
+                "url": "https://ja.wordpress.org/wordpress-4.8.1-ja.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -3206,15 +3206,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.1",
+            "version": "5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.1"
+                "reference": "tags/5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
