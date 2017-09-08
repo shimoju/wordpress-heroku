@@ -30,7 +30,7 @@
         }
     ],
     "require": {
-        "php": "~7.1.8",
+        "php": "7.1.9",
         "ext-apcu": "*",
         "ext-gd": "*",
         "ext-mbstring": "*",
