@@ -25,7 +25,7 @@ RUN apt-get update -qq && apt-get install -qq curl \
   && docker-php-ext-enable --ini-name docker-php-ext-apcu.ini apcu apc \
   # Composer
   && curl -fsSLo composer-setup.php https://getcomposer.org/installer \
-  && echo '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410 composer-setup.php' | sha384sum -c - \
+  && echo '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061 composer-setup.php' | sha384sum -c - \
   && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
   && rm composer-setup.php \
   && composer config -g repos.packagist composer https://packagist.jp \
